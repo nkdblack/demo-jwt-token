@@ -1,0 +1,23 @@
+{
+  "name": "demo_token",
+  "version": "1.0.0",
+  "description": "simple create jwt with algorithm Hmac",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nkdblack/demo-rest-api-token.git"
+  },
+  "author": "tuannv191292@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nkdblack/demo-rest-api-token/issues"
+  },
+  "homepage": "https://github.com/nkdblack/demo-rest-api-token#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
