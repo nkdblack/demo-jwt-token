@@ -43,4 +43,6 @@ const payload = {
 
 const securedInput = jwsSecuredInput(header, payload, DURATION);
 const signature = sign(header, securedInput, SECRETKEY);
+
+// check jwt https://jwt.io/
 console.log("jwt: %s.%s", securedInput, signature);
