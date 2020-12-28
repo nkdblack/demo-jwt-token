@@ -1,13 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const UserController = require('../UserController');
+const UserController = require('../controller/UserController');
 
-router.post('/login', function (req, res) {
-    const {username, password} = req.body;
-    console.log("login: ", username, password);
-    res.send('hello login')
-});
-
+router.post('/login', UserController.login);
 router.post('/register', UserController.register);
 router.post('/refresh-token', UserController.refreshToken);
 
