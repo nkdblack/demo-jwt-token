@@ -9,5 +9,6 @@ router.post('/login', function (req, res) {
 });
 
 router.post('/register', UserController.register);
+router.post('/refresh-token', UserController.refreshToken);
 
 module.exports = router;
