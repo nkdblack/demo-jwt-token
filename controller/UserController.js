@@ -121,6 +121,12 @@ async function userLogin(req, res) {
             updated_at: iat
         });
         await newToken.save();
+        res.cookie("refresh-token", refreshToken, {
+            expire: refreshTokenDuration + Date.now(),
+            httpOnly: true,
+            // secure: true,
+            sameSite: "Strict",
+        });
         res.status = 200;
         res.send({user, accessToken: jwt, refreshToken});
     } catch (err) {

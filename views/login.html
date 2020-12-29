@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+<h2>Login</h2>
+<form name="formLogin">
+    <div class="container">
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" required>
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+        <button type="button" onclick="login()">Login</button>
+        <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+        <span style="padding-top: 3px; float: right;"><a href="#">Sign Up</a></span>
+    </div>
+    <div class="container" style="background-color:#f1f1f1; display: flex; justify-content: flex-end;">
+<!--        <button type="button" class="cancelbtn">Cancel</button>-->
+        <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+</form>
+</body>
+<script>
+    function login() {
+        let username = document.forms["formLogin"]["username"].value;
+        let password = document.forms["formLogin"]["password"].value;
+        let remember = document.forms["formLogin"]["remember"].checked;
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                location.replace("/home")
+            }
+        };
+        xhttp.open("POST", "/login");
+        xhttp.setRequestHeader("Content-type", "application/json;charset=UTF-8");
+        xhttp.send(JSON.stringify({username, password, remember,}));
+    }
+</script>
+</html>
